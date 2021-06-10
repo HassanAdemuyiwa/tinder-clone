@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
-import '../styles/TinderCards.css'
+import React, {useState} from 'react';
+import TinderCard from 'react-tinder-card'
+import "../styles/TinderCards.css"
 
 const TinderCards = () => {
 
@@ -29,9 +30,8 @@ const TinderCards = () => {
     return (
         <div className="tinderCards">
             <div className="tinderCards__cardContainer">
-
                 {people.map((person) =>(
-                    <TinderCards 
+                    <TinderCard 
                     className="swipe"
                     key={person.name} 
                     preventSwipe={["up", "down"]}
@@ -39,14 +39,14 @@ const TinderCards = () => {
                     onCardLeftScreen={()=> outOfFrame(person.name)}>
                     
                     <div 
-                    style={{backgroundImage: `url(${person.url})`}}
-                    className="card">
+                    style={{backgroundImage: `url(${person.url})`}} className="card">
                         <h3>{person.name}</h3>
 
                     </div>
 
-                    </TinderCards>
-                ))}
+                    </TinderCard>
+                ))} 
+              
 
             </div>
  
